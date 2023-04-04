@@ -14,11 +14,18 @@ const Button = styled.button<{ styleType: string }>`
 	cursor: pointer;
 	box-shadow: ${(props) => props.theme.shadown};
 
+	& svg path {
+		stroke: ${(props) => props.theme.colors.typography.secondaryTypography};
+	}
+
 	${({ styleType }) =>
 		styleType === 'ghost' &&
 		css`
 			background-color: ${(props) => props.theme.colors.background};
 			color: ${(props) => props.theme.colors.typography.tertiaryTypography};
+			& svg path {
+				stroke: ${(props) => props.theme.colors.typography.tertiaryTypography};
+			}
 		`}
 
 	&:hover {
@@ -33,7 +40,7 @@ export enum StyleTypeEnum {
 
 interface Props {
 	label: string;
-	icon?: string;
+	svg?: JSX.Element;
 	onClick: () => void;
 	styleType: StyleTypeEnum;
 }
@@ -41,22 +48,22 @@ interface Props {
 /**
  *
  * @param prop
- * @param label string con eltexto que mostrara el componente
- * @param icon string con la localización del icono
+ * @param label string con el texto que mostrara el componente
+ * @param svg JSX.Element que contiene un icono en formato
  * @param onClick función que se ejecutara con el evento click del componente
- * @param styleType nombre del tipo de botón
+ * @param styleType string con el tipo de botón
  *
  * @returns JSX.Element
  *
  * @example
  *  <Button label="Soy un botón"/>
- * <Button label="botón" styleType='ghost' icon="https://example.png"/>
+ * 	<Button label="botón" styleType='ghost' svg={iconBag} />
  */
 
 const App = (props: Props): JSX.Element => (
 	<Button onClick={props.onClick} styleType={props.styleType}>
 		{props.label}
-		{props.icon !== undefined && <img src={props.icon} />}
+		{props.svg}
 	</Button>
 );
 
