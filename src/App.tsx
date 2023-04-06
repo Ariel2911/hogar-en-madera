@@ -4,8 +4,10 @@ import theme from './styled/theme';
 import Button, { StyleTypeEnum } from './components/button';
 import Tag, { TagTypeEnum } from './components/tag';
 import ArrowButton, { ArrowTypeEnum } from './components/arrowButton';
+import Category, { CategoryTypeEnum } from './components/category';
 
 import { iconBag } from './components/iconos';
+import imgCategory from './assets/categoty/organizadores.png';
 
 function App(): JSX.Element {
 	return (
@@ -37,6 +39,23 @@ function App(): JSX.Element {
 			<ArrowButton arrowType={ArrowTypeEnum.derecha} />
 			<ArrowButton arrowType={ArrowTypeEnum.abajo} />
 			<ArrowButton arrowType={ArrowTypeEnum.izquierda} />
+			<br />
+			<br />
+			<hr />
+			<br />
+			<br />
+			<div style={{ padding: '16px' }}>
+				<Category
+					title='Organizadores'
+					img={imgCategory}
+					categoryType={CategoryTypeEnum.card}
+				/>
+			</div>
+			<Category
+				title='Organizadores'
+				img={imgCategory}
+				categoryType={CategoryTypeEnum.default}
+			/>
 			<br />
 			<br />
 			<hr />
