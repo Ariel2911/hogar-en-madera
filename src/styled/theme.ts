@@ -22,7 +22,7 @@ const theme: DefaultTheme = {
 		},
 	},
 
-	shadown: '0 4px 4px #3897B7B3',
+	shadown: '0 4px 12px #3897B7B3',
 };
 
 export default theme;
