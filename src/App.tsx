@@ -5,9 +5,11 @@ import Button, { StyleTypeEnum } from './components/button';
 import Tag, { TagTypeEnum } from './components/tag';
 import ArrowButton, { ArrowTypeEnum } from './components/arrowButton';
 import Category, { CategoryTypeEnum } from './components/category';
-
 import { iconBag } from './components/iconos';
+import Thumbnails from './components/thumbnails';
+
 import imgCategory from './assets/categoty/organizadores.png';
+import imgProduct from './assets/product/lampara farol.jpg';
 
 function App(): JSX.Element {
 	return (
@@ -51,11 +53,20 @@ function App(): JSX.Element {
 					categoryType={CategoryTypeEnum.card}
 				/>
 			</div>
+			<br />
+			<br />
+			<br />
 			<Category
 				title='Organizadores'
 				img={imgCategory}
 				categoryType={CategoryTypeEnum.default}
 			/>
+			<br />
+			<br />
+			<hr />
+			<br />
+			<br />
+			<Thumbnails imgs={[imgProduct, imgProduct, imgProduct]} />
 			<br />
 			<br />
 			<hr />
