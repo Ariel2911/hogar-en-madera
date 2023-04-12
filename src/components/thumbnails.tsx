@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -24,37 +23,37 @@ const Button = styled.button`
 
 const Img = styled.img`
 	width: 100%;
+	height: 100%;
 `;
 
 interface Props {
 	imgs: string[];
-	onClick: () => void;
+	selected: number;
+	onClick: (id: number) => void;
 }
 
 /**
  *
  * @param props
  * @param img string con la ubicación de la imagen.
+ * @param selected id de la imagen seleccionada
  * @params onClick función que se ejecutara con el evento onClick del componente
  *
  * @returns JSX.Element
  *
  * @example
- * <Thumbnails onClick={() => { console.log("Soy un thumbnail"); }} imgs={[imgProduct, imgProduct, imgProduct]} />
+ * <Thumbnails imgs={string[]} onClick={():number => handleClick(id:number)} selected={selected} />
  */
 
 const App = (props: Props): JSX.Element => {
-	const [select, setSelect] = useState(0);
-
 	const handleClick = (id: number): void => {
-		setSelect(id);
-		props.onClick();
+		props.onClick(id);
 	};
 
 	return (
 		<Container>
 			{props.imgs.map((img, key) => {
-				const className = key === select ? 'isActive' : '';
+				const className = key === props.selected ? 'isActive' : '';
 
 				return (
 					<Button
@@ -70,12 +69,6 @@ const App = (props: Props): JSX.Element => {
 			})}
 		</Container>
 	);
-};
-
-App.defaultProps = {
-	onClick: () => {
-		console.log('Soy un thumbnail');
-	},
 };
 
 export default App;
