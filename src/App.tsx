@@ -8,17 +8,27 @@ import Category, { CategoryTypeEnum } from './components/category';
 import { iconBag } from './components/iconos';
 // import Thumbnails from './components/thumbnails';
 import ProductCard, { ProductCardTypeEnum } from './components/productCard';
+import Header from './components/header';
 
 import imgCategory from './assets/categoty/organizadores.png';
 import imgProduct00 from './assets/product/lampara farol00.png';
 import imgProduct01 from './assets/product/lampara farol01.png';
 import imgProduct02 from './assets/product/lampara farol02.png';
+import logo from './assets/header/Logo.png';
 
 function App(): JSX.Element {
+	const navBarItems = ['inicio', 'categorias', 'productos', 'contacto'];
+
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 
+			<Header navBarItems={navBarItems} logo={logo} />
+			<br />
+			<br />
+			<hr />
+			<br />
+			<br />
 			<Button />
 			<Button styleType={StyleTypeEnum.ghost} />
 			<Button
