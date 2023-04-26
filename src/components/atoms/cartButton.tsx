@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { iconBag } from './iconos';
+import { icons } from '../';
 
 const Container = styled.button`
 	position: relative;
@@ -33,7 +33,7 @@ const App = (): JSX.Element => {
 	return (
 		<Container>
 			<Number>{amountCart}</Number>
-			{iconBag}
+			{icons.iconBag}
 		</Container>
 	);
 };

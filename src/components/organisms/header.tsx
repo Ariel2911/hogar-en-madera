@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import MenuButton from './MenuButton';
-import CartButton from './cartButton';
+import MenuButton from '../atoms/menuButton';
+import CartButton from '../atoms/cartButton';
 
-import NavBar from './navBar';
+import NavBar from '../atoms/navBar';
 import { useState } from 'react';
 
 const Container = styled.header`

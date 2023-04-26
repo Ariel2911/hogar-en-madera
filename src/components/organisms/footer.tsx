@@ -57,7 +57,7 @@ interface Props {
 		data: string;
 	}>;
 	copyRight: string;
-	madeIn: string;
+	madeBy: string;
 }
 
 const App = (props: Props): JSX.Element => (
@@ -82,7 +82,7 @@ const App = (props: Props): JSX.Element => (
 		</Contact>
 		<Footer>
 			<p>Copyright © {props.copyRight}</p>
-			<p>Desarrollado por {props.madeIn}</p>
+			<p>Desarrollado por {props.madeBy}</p>
 		</Footer>
 	</Container>
 );
