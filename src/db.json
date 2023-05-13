@@ -1,0 +1,30 @@
+{
+	"product": {
+		"image": [""],
+		"name": "",
+		"category": "",
+		"description": "",
+		"tag": "",
+		"price": 0.0,
+		"stock": 0
+	},
+	"socialNetwork": {
+		"facebook": "http//",
+		"instagram": "http//",
+		"twitter": "http//"
+	},
+	"contactInformation": [
+		{
+			"icon": "http//",
+			"data": "1155555555"
+		},
+		{
+			"icon": "http//",
+			"data": "ariel29111978@hotmail.com"
+		},
+		{
+			"icon": "http//",
+			"data": "Av. Corrientes 2333 2do “A” Balvanera"
+		}
+	]
+}
