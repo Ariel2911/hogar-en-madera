@@ -51,13 +51,15 @@ const Footer = styled.div`
 
 interface Props {
 	logo: string;
-	socialNetwork: JSX.Element[];
+	socialNetwork: Array<{
+		icon: JSX.Element;
+		url: string;
+	}>;
 	contactInformation: Array<{
 		icon: JSX.Element;
 		data: string;
 	}>;
 	copyRight: string;
-	madeIn: string;
 }
 
 const App = (props: Props): JSX.Element => (
@@ -65,24 +67,24 @@ const App = (props: Props): JSX.Element => (
 		<Logo src={props.logo} />
 		<h2>Seguinos</h2>
 		<SocialNetwork>
-			{props.socialNetwork.map((item, id) => (
-				<a key={id} href=''>
-					{item}
+			{props.socialNetwork.map(({ icon, url }) => (
+				<a key={url} href={url}>
+					{icon}
 				</a>
 			))}
 		</SocialNetwork>
 		<Contact>
 			<h2>Contactanos</h2>
-			{props.contactInformation.map((item, id) => (
-				<ContactInformation key={id}>
-					{item.icon}
-					<p>{item.data}</p>
+			{props.contactInformation.map(({ icon, data }) => (
+				<ContactInformation key={data}>
+					{icon}
+					<p>{data}</p>
 				</ContactInformation>
 			))}
 		</Contact>
 		<Footer>
 			<p>Copyright © {props.copyRight}</p>
-			<p>Desarrollado por {props.madeIn}</p>
+			<p>Desarrollado por Ariel Barrios</p>
 		</Footer>
 	</Container>
 );
